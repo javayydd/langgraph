@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "langgraph-checkpoint-redis"
+version = "0.0.1"
+description = "Redis-based checkpoint implementation for LangGraph"
+authors = ["zhangqp@neusoft.com"]
+readme = "README.md"
+packages = [
+    {include = "langgraph"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.10.1"
+redis = "^5.0.1"
+aioredis = "^2.0.1"
+langgraph = {path = "../langgraph", develop = true}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-asyncio = "^0.21.1"
+black = "^23.1.0"
+isort = "^5.10.1"
+mypy = "^0.910"
+ruff = "^0.0.241"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
